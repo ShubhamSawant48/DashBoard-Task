@@ -1,16 +1,44 @@
-# React + Vite
+# Dashboard UI (React + Tailwind + Recharts)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a responsive dashboard UI built using **React**, **Tailwind CSS**, and **Recharts**.  
+It was created as part of an interview assignment to demonstrate layout structuring, data visualization, and clean component-based design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## React Compiler
+- Sidebar navigation with active state indicator
+- Analytics section with:
+  - Bar chart
+  - Line chart
+  - Donut-style pie charts
+- Right-side summary cards with:
+  - Segmented pill buttons
+  - Key statistics (Sold out, Refund, Stock)
+  - Small trend graph
+  - Top Products and Top Buyers list
+- Clean and minimal UI inspired by modern dashboards
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** – Component-based UI
+- **Tailwind CSS** – Utility-first styling
+- **Recharts** – Charts and data visualization
+- **JSON** – Static data source (simulates API data)
+
+## ▶️ How to Run Locally
+
+1. Install dependencies  
+   ```bash
+   npm install
+
+2. Start the development server
+    ```bash
+    npm run dev
+
+3. Open in browser
+    http://localhost:5173
+
+
