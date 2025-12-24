@@ -1,0 +1,6 @@
+[
+    { "name": "Geeksforgeeks", "students": 400,"fees":250 },
+    { "name": "Technical scripter", "students": 700,"fees":330 },
+    { "name": "Geek-i-knack", "students": 200,"fees":100 },
+    { "name": "Geek-o-mania", "students": 1000,"fees":600 }
+]
