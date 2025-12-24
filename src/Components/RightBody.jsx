@@ -1,83 +1,100 @@
-import React, { useState } from "react";
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
-import { RechartsDevtools } from "@recharts/devtools";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
 import data from "../utils/Data.json";
 
 const RightBody = () => {
-  const [activeIndex, setActiveIndex] = useState(-1);
-
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
-
-  const onPieEnter = (_, index) => {
-    setActiveIndex(index);
-  };
-
   return (
-    <div>
-      <div className="border bg-gray-100 mx-5 rounded-2xl w-auto">
-        <div>
-          <h3 className="ml-3">lorem ipsum</h3>
-          <div className=" my-4 rounded-2xl bg-gray-300">
-            <button className="hover:bg-green-500 bg-gray-300 mx-2 px-2 rounded-xl">
-              All-in
-            </button>
-            <button className="hover:bg-gray-300 bg-green-500  mx-2 px-2 rounded-xl">
-              Dolor sit amet
-            </button>
-          </div>
+    <div className="w-80 space-y-6">
+      <div className="bg-white rounded-2xl p-5">
+        <h3 className="font-semibold mb-4">Lorem Ipsum</h3>
+
+        <div className="bg-gray-100 p-1 rounded-full flex w-fit">
+          <button className="px-4 py-1 text-sm rounded-full text-gray-600 hover:bg-[#2f7d6d]">
+            All-in
+          </button>
+
+          <button className="px-4 py-1 text-sm rounded-full text-gray-600 hover:bg-[#2f7d6d]">
+            Dolor sit amet
+          </button>
         </div>
-        <h3>Dolor sit Amet</h3>
-        <div>
-          <div className="bg-white">
-            <h4>In this site</h4>
+
+        <p className="font-semibold my-3">Dolor Sit Ammet</p>
+
+        <div className="bg-gray-100 pt-2 p-2 rounded-md">
+          <div className="grid grid-cols-3 text-center mb-4 bg-white outline-none rounded-full mt-1 mx-2">
+            <div>
+              <p className="font-semibold">230</p>
+              <p className="text-sm text-gray-500">Sold out</p>
+            </div>
+
+            <div>
+              <p className="font-semibold">2</p>
+              <p className="text-sm text-gray-500">Refund</p>
+            </div>
+
+            <div>
+              <p className="font-semibold">1500</p>
+              <p className="text-sm text-gray-500">Stock</p>
+            </div>
           </div>
-          <LineChart
-            style={{
-              width: "100%",
-              aspectRatio: 1.618,
-              maxWidth: 200,
-              margin: "auto",
-            }}
-            responsive
-            data={data}
-          >
-            <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
-            {/* <YAxis width="auto" /> */}
-            <Line type="monotone" dataKey="students" stroke="#8884d8" />
-            {/* <Line type="monotone" dataKey="fees" stroke="#82ca9d" /> */}
-            <RechartsDevtools />
-          </LineChart>
-          <div className="flex gap-15 my-3 mx-5">
-            <button className="px-5 py-2 bg-white rounded-3xl hover:bg-green-500">
+
+          <div className="w-full h-22.5 mb-4">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={data.analytics}>
+                <XAxis dataKey="name" hide />
+                <YAxis hide />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="students"
+                  stroke="#2f7d6d"
+                  strokeWidth={2}
+                  dot={false}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div className="flex justify-between">
+            <button className="border px-4 py-1 rounded-full text-sm">
               Yearly
             </button>
-            <button className="px-5 py-2 bg-white rounded-3xl hover:bg-green-500">
+            <button className="border px-4 py-1 rounded-full text-sm">
               Monthly
             </button>
-            <button className="px-8 py-2 bg-white rounded-3xl hover:bg-green-500">
+            <button className="border px-4 py-1 rounded-full text-sm">
               Day
             </button>
           </div>
         </div>
       </div>
-      <div className="border bg-gray-100 mx-5 rounded-2xl w-auto mt-3 pb-20">
-        <h2 className="text-sm mx-3 my-5">Lorem Ipsum</h2>
-        <div className="flex gap-10 mx-25">
+
+      <div className="bg-white rounded-2xl p-5">
+        <h3 className="font-semibold mb-4">Lorem Ipsum</h3>
+
+        <div className="flex justify-between">
           <div>
-            <h1 className="font-bold my-2">Top Products</h1>
-            <ol style={{ listStyleType: 'decimal' }}>
-                <li className="text-sm">Lorem Ipsum</li>
-                <li className="text-sm">Lorem Ipsum</li>
-                <li className="text-sm">Lorem Ipsum</li>
+            <p className="font-semibold mb-2">Top Products</p>
+            <ol className="list-decimal ml-4 text-sm space-y-1">
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
             </ol>
           </div>
+
           <div>
-            <h1  className="font-bold my-2">Top Buyer</h1>
-            <ol style={{ listStyleType: 'decimal' }}>
-                <li className="text-sm">Lorem Ipsum</li>
-                <li className="text-sm">Lorem Ipsum</li>
-                <li className="text-sm">Lorem Ipsum</li>
+            <p className="font-semibold mb-2">Top Buyer</p>
+            <ol className="list-decimal ml-4 text-sm space-y-1">
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
             </ol>
           </div>
         </div>

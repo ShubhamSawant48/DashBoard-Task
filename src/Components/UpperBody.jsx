@@ -1,19 +1,22 @@
-import profileImg from "../assets/profile.png";
+import profile from "../assets/profile.png";
 
 const UpperBody = () => {
   return (
-    <div className="flex py-4 px-10 gap-40 ">
+    <div className="flex justify-between items-center mb-6">
       <input
-        className="border border-2 border-black rounded-3xl ml-20 px-4 w-100"
-        placeholder="Search"
-      ></input>
-      <div className="bg-green-500 px-3 rounded-lg flex gap-5 ml-50">
+        type="text"
+        placeholder="Search..."
+        className="w-105 px-4 py-2 rounded-full border text-sm"
+      />
+
+      <div className="flex items-center gap-4 bg-[#2f7d6d] px-4 py-2 rounded-full">
         <input
-          className="border rounded-3xl my-2 px-4"
+          type="text"
           placeholder="Search"
-        ></input>
-        <button>🔔</button>
-        <img src={profileImg} className="w-6 h-5 my-2"></img>
+          className="bg-transparent outline-none text-white placeholder-white text-sm"
+        />
+        <span>🔔</span>
+        <img src={profile} className="w-7 h-7 rounded-full bg-white" />
       </div>
     </div>
   );
